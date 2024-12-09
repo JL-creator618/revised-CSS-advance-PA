@@ -1,0 +1,151 @@
+/* custom CSS properties (variables)*/
+:root{
+    --first-color: hsl(31, 77%, 52%);
+    --second-color: hsl(184, 100%, 22%);
+    --third-color: hsl(179, 100%, 13%);
+    --paragraph-color: hsl(0, 0%, 100%, 0.75);
+    --background-color: hsl(0, 0%, 95%);
+    --text-font: "Lexend Deca", serif;
+    --text-bigfont: "Big Shoulders Display", serif; 
+    
+}
+
+.lexend-deca-text {
+    font-family: var(--text-font);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color:var(--paragraph-color);
+}
+/*h2*/
+.big-shoulders-display-text { 
+    font-family: var(--text-bigfont);
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--background-color);
+    text-transform: uppercase; /*to nake all letters uppercase*/
+    font-size: 40px;
+}  
+body {
+    margin-top:5rem;
+}
+
+p{
+    line-height: 1.8;
+}
+
+/*grid*/
+body{
+    display: grid;
+    grid-template-columns: 33%, 33%, 33%;
+    gap: 0em;
+    font-size: 15px;  
+}
+
+.attribution p{
+    color:var(--first-color);
+}
+
+/* put items in center*/
+.card-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 50%;
+    /*background-color: palevioletred; *for visual*/
+   
+}
+
+/*mobile first (320px)-> try one card layout first*/
+.card-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    /*background-color: yellowgreen;* for visual*/ 
+   
+}
+/* card -cointainer- layout*/
+.card-content-orange, .card-content-darkcyan, .card-content-verydarkcyan{
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    width:18rem;
+    height: 45%;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    /* background-color: hsl(252, 81%, 36%); *for visual**/
+}
+/*amend colors per card*/
+.card-content-orange{
+    background-color:var(--first-color);
+    border-radius: 10px 10px 0 0;
+}
+.card-content-darkcyan{
+    background-color: var(--second-color);
+}
+.card-content-verydarkcyan{
+    background-color: var(--third-color);
+    border-radius: 0 0 10px 10px ;
+}
+
+/*button layout*/
+.button-orange, .button-darkcyan, .button-verydarkcyan{
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 8em;
+    height: 2em;
+    padding: 0.5rem;
+    border-radius: 25px;
+    border: 2px solid var(--background-color);
+    transition-duration: 0.4s;
+    cursor:pointer;    
+}
+/* button text color per card*/
+.button-orange p{
+    color: var(--first-color);
+}
+.button-darkcyan p{
+    color: var(--second-color);
+}
+.button-verydarkcyan p{
+    color:var(--third-color);
+}
+/*background color per card after hover*/
+.button-orange:hover{
+    background-color: var(--first-color);
+}
+.button-darkcyan:hover{
+    background-color: var(--second-color);
+}
+.button-verydarkcyan:hover{
+    background-color: var(--third-color);
+}
+/*text color after hover*/
+.button-orange:hover p, .button-darkcyan:hover p, .button-verydarkcyan:hover p{
+    color: var(--paragraph-color);
+}
+
+@media (min-width:620px) and (max-with:1440px){
+.card-list-item{
+    flex-direction: row;
+    width:50rem;
+    height:fit-content;
+    /*background-color: aqua; *for visual**/
+    }
+}
+/*adjust styling per card*/
+.card-content-orange, .card-content-darkcyan, .card-content-verydarkcyan {
+    border-radius: 10px 10px 10px 10px;
+}
+
